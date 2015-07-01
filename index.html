@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Marionette Contact Manager</title>
+    
+    <link href="assets/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+    <link href="assets/css/screen.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <div id="items">
+      
+      
+
+      
+    </div>
+
+    <script type="text/template" id="itemTemplate">
+
+      <div class="item_info">
+          <div id="name"><%= itemName %><div id="desc">(<%= itemDesc %>)</div></div>
+        
+          <div id="size"><span class="descriptor">Size:</span> <%= unitSize %></div>
+        
+        
+          <div id="amount"><span class="descriptor">Quantity: </span><%= quantity %></div>
+        
+       
+          <div id="itemLocation"><span class="descriptorLoc">Location: </span><%= location %></div>
+       
+      </div>
+
+      <button  class="delete order">ORDER</button>
+      <button  class="view">View</button>
+    </script>
+
+    <script type="text/template" id="formTemplate">
+     
+      <form action="#" id="addItem">
+        
+        <div id="form_container">
+          <label for="itemName">Item Name </label><br>
+          <input id="itemName" type="text"><br><br>
+          <label for="itemDesc">Description </label><br>
+          <input type="text" id="itemDesc"><br><br>
+          <label for="unitSize">Size</label><br>
+          <input type="text" id="unitSize"><br><br>
+          <label for="unitWeight">Weight </label><br>
+          <input type="text" id="unitWeight"><br><br>
+          <label for="quantity">Quantity </label><br>
+          <input type="text" id="quantity"><br><br>
+          <label for="location">Location </label><br>
+          <input type="text" id="location"><br><br>
+          <button id="add">Add</button>
+        </div>
+      </form>
+      
+    </script>
+  	
+
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/json2.js"></script>
+    <script src="assets/js/vendor/underscore.js"></script>
+    <script src="assets/js/vendor/backbone.js"></script>
+    <script src="assets/js/vendor/backbone.marionette.js"></script>
+    <script src="assets/js/vendor/jquery.formatDateTime.js"></script>
+    <script src="assets/js/vendor/jquery-ui.js"></script>
+    <script src="assets/js/models/book.js"></script>
+    <script src="assets/js/collections/library.js"></script>
+    <script src="assets/js/views/book.js"></script>
+    <script src="assets/js/views/library.js"></script>
+    <script src="assets/js/views/form.js"></script>
+    <script src="assets/js/router.js"></script>       
+    <script src="assets/js/app.js"></script>    
+
+
+    <script type="text/javascript">
+
+    </script>
+  </body>
+</html>

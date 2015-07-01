@@ -1,0 +1,184 @@
+body {
+	background-color: #ffffff;
+	margin: 0;
+	padding: 0;
+	font: normal normal normal 11px/normal '.HelveticaNeueDeskInterface-Regular';
+}
+
+#header{
+	width: 100%;
+	height: 50px;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #eeeeee;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+}
+
+#items{
+	margin-top: 50px;
+}
+
+.itemsContainer {
+	width:   100%;
+	height:  130px;
+	background-color: #fff;
+	border-bottom: 1px solid #f0f0f0;
+	float: left;
+	margin: 0;
+	position: relative;
+}
+
+.itemsContainer img {
+	float: left;
+	margin: 10px;
+}
+
+.itemsContainer ul{
+	list-style-type: none;
+	margin-bottom: 0;
+}
+
+#addItem{
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
+#addItem label {
+	width: 100px;
+	margin-right: 10px;
+	text-align: right;
+	line-height: 25px;
+}
+
+#addItem label #addItem input{
+	display: block;
+	margin-bottom: 10px;
+	float: left;
+}
+
+#addItem label[for="title"], #addItem label[for="releaseDate"] {
+	clear: both;
+}
+
+#addItem div{
+	width: 100%;
+	margin-top: 20px;
+}
+
+div.item_info{
+	width: 75%;
+	position: absolute;
+	left: 20px;
+	top: 10px;
+}
+
+div.item_info div#name{
+	font-size: 2em;
+	color: #29ABE2;
+	margin-bottom: 10px;
+}
+
+div.item_info div#size, 
+div.item_info div#amount,
+div.item_info div#itemLocation{
+	font-size: 1.2em;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+div.item_info span.descriptor{
+	color: #6FB6C9;
+}
+
+div.item_info span.descriptorLoc{
+	color: #C1272D;
+}
+
+div.item_info div#name div#desc{
+	display: inline;
+	font-size: 0.7em;
+	color: #999999;
+	margin-left: 10px;
+}
+
+
+
+.order{
+	position: absolute;
+	width: 100px;
+	height: 40px;
+	border: 1px solid #1F8CB2;
+	background-color: #29ABE2;
+	border-radius: 0;
+	top: 20px;
+	right: 20px;
+	color: #f2f2f2;
+}
+
+.view{
+	position: absolute;
+	width: 80px;
+	height: 30px;
+	border: 1px solid #eeeeee;
+	background-color: #f0f0f0;
+	border-radius: 0;
+	bottom: 20px;
+	right: 20px;
+	color: #666;
+}
+
+#gotoform{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	width: 60px;
+	height: 60px;
+	background-color: #005584;
+	border-radius: 50%;
+	border: 1px solid #00354C;
+	color: #f2f2f2;
+}
+
+#addItem div:after {
+	content: "";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+	font-size: 0;
+	line-height: 0;
+}
+
+#addItem #form_container{
+	margin-left: 10%;
+	width: 80%;
+	margin-top: 30px;
+}
+
+#addItem #form_container input{
+	width: 100%;
+	border-radius: 0;
+}
+
+#addItem #form_container label{
+	font-size: 1.1em;
+}
+
+#addItem button#add{
+	position: absolute;
+	width: 100px;
+	height: 40px;
+	border: 1px solid #1F8CB2;
+	background-color: #29ABE2;
+	border-radius: 0;
+	margin: 0;
+	bottom: 20px;
+	right: 10%;
+	color: #f2f2f2;
+}
+
+button{
+	cursor: pointer;
+}
+
