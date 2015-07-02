@@ -3,7 +3,6 @@ var application_root = __dirname,
 	express = require('express'),
 	path = require('path'),
 	mongoose = require('mongoose');
-	phonegap = require('phonegap');
 
 // Connect to DB
 //mongoose.connect('mongodb://localhost/item_database');
