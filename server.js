@@ -118,7 +118,7 @@ app.put('/api/items/:id', function( request, response ){
 });
 
 // Delete a book
-app.delete('/api/items/:id', function(request, response){
+app.delete('https://api.mongolab.com/api/1/databases/site_manager/collections/items/:id?apiKey=iVU0IeMR4GTTwMVmXwsIqqjbPooI9St3', function(request, response){
 	console.log('Deleting item with id ' + request.params.id);
 
 	return ItemModel.findById( request.params.id, function(err, item){
