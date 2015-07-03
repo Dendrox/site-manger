@@ -12,8 +12,7 @@ app.Router = Backbone.Router.extend({
 		this.loadView(new app.FormView());
 	},
 	loadView : function(view) {
-		console.log(this.view)
-		
+		this.view && this.view.remove();
 
 		setTimeout(function(view){
 			this.view = view;
