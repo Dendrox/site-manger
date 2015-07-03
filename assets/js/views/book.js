@@ -19,6 +19,7 @@ app.BookView = Backbone.View.extend({
 	},
 
 	deleteItem : function(){
+		console.log(this.model.attributes.id);
 		this.model.destroy();
 
 		this.remove();

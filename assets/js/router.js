@@ -13,8 +13,9 @@ app.Router = Backbone.Router.extend({
 	},
 	loadView : function(view) {
 		this.view && this.view.remove();
-
+        $('#header').empty();
 		setTimeout(function(view){
+			var header = new app.Header();
 			this.view = view;
 		},30)
 		

@@ -12,11 +12,12 @@ app.FormView = Backbone.View.extend({
 
 	initialize : function(){
 		this.collection = new app.Library();
-		this.render();
-
+		$('#header').empty();
+		this.render();		
 	},
 	render : function(){
 		this.$el.html(this.template());
+		this.$el.append('<button id="add">Save</button>')
 		
 		return this;
 		

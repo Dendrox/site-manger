@@ -1,26 +1,24 @@
 var app = app || {};
 
 app.LibraryView = Backbone.View.extend({
-	el : '#items',
-	events : {
-		'click #gotoform' : 'showForm'
-	},
+	el : '#items',	
 
 	initialize : function(){
 		this.collection = new app.Library();
 		this.collection.fetch({reset : true});
 		this.listenTo( this.collection, 'add', this.renderBook );
 		this.listenTo( this.collection, 'reset', this.render );
+		$('#header').empty();
 	},
 
 	render : function(){
+		$('#header').append('<button id="gotoform">Add</button>');
 		$('#items').empty();
 		$('.itemsContainer').empty();
 		this.collection.each(function( item ){
 			this.renderBook( item );
 
 		}, this);
-		this.$el.append('<button id="gotoform">Add</button>')
 	},
 
 	renderBook : function( item ){
@@ -30,11 +28,7 @@ app.LibraryView = Backbone.View.extend({
 		this.$el.append( bookView.render().el )
 		
 
-	},
-	showForm : function(e){
-		e.preventDefault();
-		Backbone.history.navigate('#add',{trigger:true})
-	},
+	},	
 
 	close: function() {		
 		this.remove();

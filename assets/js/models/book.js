@@ -5,6 +5,7 @@ app.Book = Backbone.Model.extend({
 		this.on('all', function(e) {console.log(this.get(this.itemName ) + ' event:' + e); });
 	},
 	defaults : {
+		id         : "",
 		itemName   : "",
         itemDesc   : "",
         unitSize   : "",
@@ -16,5 +17,9 @@ app.Book = Backbone.Model.extend({
 		response.id = response._id;
 		return response;
 	},
-	urlRoot : 'https://api.mongolab.com/api/1/databases/site_manager/collections/items/:id?apiKey=iVU0IeMR4GTTwMVmXwsIqqjbPooI9St3'	
+	url : function(id){
+		
+		
+		return 'https://api.mongolab.com/api/1/databases/site_manager/collections/items/'+this.id.$oid+'?apiKey=iVU0IeMR4GTTwMVmXwsIqqjbPooI9St3'	
+	}
 });
