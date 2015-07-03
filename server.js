@@ -48,7 +48,7 @@ app.configure( function(){
 
 
 // Get a list of all books
-app.get('/api/items', function( request, response){
+app.get('https://api.mongolab.com/api/1/databases/site_manager/collections/items?apiKey=iVU0IeMR4GTTwMVmXwsIqqjbPooI9St3', function( request, response){
 	return ItemModel.find( function( err, items){
 		if(!err){
 			return response.send( items );
