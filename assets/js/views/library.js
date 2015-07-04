@@ -1,20 +1,20 @@
 var app = app || {};
 
 app.LibraryView = Backbone.View.extend({
-	el : '#items',	
-
 	initialize : function(){
 		this.collection = new app.Library();
 		this.collection.fetch({reset : true});
-		this.listenTo( this.collection, 'add', this.renderBook );
 		this.listenTo( this.collection, 'reset', this.render );
-		$('#header').empty();
+		console.error('new lib view')
+		$('#items').empty();
 	},
 
 	render : function(){
+		console.log(this.collection)
 		$('#header').append('<button id="gotoform">Add</button>');
-		$('#items').empty();
+		
 		$('.itemsContainer').empty();
+
 		this.collection.each(function( item ){
 			this.renderBook( item );
 
@@ -25,14 +25,8 @@ app.LibraryView = Backbone.View.extend({
 		var bookView = new app.BookView({
 			model : item
 		});
-		this.$el.append( bookView.render().el )
+		$('#items').append( bookView.render().el )
 		
 
-	},	
-
-	close: function() {		
-		this.remove();
-		this.unbind();
 	}
-
 })

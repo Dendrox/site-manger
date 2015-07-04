@@ -3,8 +3,7 @@ var app = app || {};
 app.FormView = Backbone.View.extend({
 	tagName   : 'div',
 	className : 'addForm',
-	el        : '#items',
-	template  : _.template( $('#formTemplate').html() ),
+	template  : _.template( $('#formTemplate').html()+'<button id="add">Save</button>' ),
 
 	events : {
 		'click #add' : 'addItem'
@@ -12,20 +11,21 @@ app.FormView = Backbone.View.extend({
 
 	initialize : function(){
 		this.collection = new app.Library();
+		
 		$('#header').empty();
-		this.render();		
+		this.render();	
+		console.error('form')	
 	},
 	render : function(){
 		this.$el.html(this.template());
-		this.$el.append('<button id="add">Save</button>')
-		
+		$('#items').empty().append(this.$el)
 		return this;
 		
 	},
 
 	addItem : function(e){
 		e.preventDefault();
-
+		alert('adding')
 		var formData = {}
 		
 		$( '#addItem div' ).children( 'input' ).each( function(i, el){
@@ -37,8 +37,19 @@ app.FormView = Backbone.View.extend({
 			$(el).val('');
 		});
 
-		this.collection.create( formData )
-		Backbone.history.navigate('',{trigger:true});
+		this.collection.create( formData, {
+			wait : true,
+			success : function(response){
+				console.error('model created')
+				console.error(response)
+				Backbone.history.navigate('',{trigger:true});
+			},
+			error : function(err){
+				console.error('model not created')
+				console.error(err)
+			}
+		} )
+		//Backbone.history.navigate('',{trigger:true});
 	}
 
 

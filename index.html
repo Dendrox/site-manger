@@ -37,6 +37,26 @@
       <button  class="view">View</button>
     </script>
 
+     <script type="text/template" id="itemView">
+
+      <div class="item_info">
+          <div id="name"><%= itemName %></div><br><br>
+          <div id="desc"><%= itemDesc %></div><br><br>
+        
+          <div id="size"><span class="descriptor">Size:</span> <%= unitSize %></div><br>
+        
+        
+          <div id="amount"><span class="descriptor">Quantity: </span><%= quantity %></div><br>
+        
+       
+          <div id="itemLocation"><span class="descriptorLoc">Location: </span><%= location %></div><br>
+       
+      </div>
+
+      <button  class="delete order">ORDER</button>
+      <button  class="back">Back</button>
+    </script>
+
     <script type="text/template" id="formTemplate">
      
       <form action="#" id="addItem">
@@ -54,7 +74,9 @@
           <input type="text" id="quantity"><br><br>
           <label for="location">Location </label><br>
           <input type="text" id="location"><br><br>
+
         </div>
+        
       </form>
       
     </script>
@@ -73,6 +95,7 @@
     <script src="assets/js/views/library.js"></script>
     <script src="assets/js/views/form.js"></script>
     <script src="assets/js/views/header.js"></script>
+    <script src="assets/js/views/itemView.js"></script>
     <script src="assets/js/router.js"></script>       
     <script src="assets/js/app.js"></script>    
 

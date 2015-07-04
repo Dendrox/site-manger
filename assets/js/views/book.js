@@ -6,7 +6,8 @@ app.BookView = Backbone.View.extend({
 	template  : _.template( $('#itemTemplate').html() ),
 
 	events : {
-		'click .delete' : 'deleteItem'
+		'click .delete' : 'deleteItem',
+		'click .view'   : 'viewItem'
 	},
 
 	render    : function(){
@@ -19,9 +20,12 @@ app.BookView = Backbone.View.extend({
 	},
 
 	deleteItem : function(){
-		console.log(this.model.attributes.id);
 		this.model.destroy();
 
 		this.remove();
+	},
+	viewItem : function(){
+		Backbone.history.navigate('item/:'+this.model.id.$oid, {trigger:true})
+		console.log('viewitem')
 	}
 });
