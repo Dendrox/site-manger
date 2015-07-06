@@ -12,7 +12,7 @@ app.LibraryView = Backbone.View.extend({
 	},
 
 	render : function(){
-		$('#header').append('<button id="gotoform">Add</button>');
+		$('#header').append('<button id="side_menu">Menu</button><button id="my_orders">Orders</button><button id="gotoform">Add</button>');
 		
 		$('.itemsContainer').empty();
 

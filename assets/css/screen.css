@@ -117,6 +117,7 @@ div.item_info div#name div#desc{
 	color: #f2f2f2;
 }
 
+
 .view{
 	position: absolute;
 	width: 80px;
@@ -141,6 +142,42 @@ div.item_info div#name div#desc{
 	color: #005584;
 }
 
+#my_orders{
+	position: absolute;
+	bottom: 10px;
+	right: 90px;
+	width: 50px;
+	height: 50px;
+	background-color: #f2f2f2;
+	border-radius: 50%;
+	border: 1px solid #005584;
+	color: #005584;
+}
+
+#side_menu{
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+	width: 50px;
+	height: 50px;
+	background-color: #f2f2f2;
+	border-radius: 50%;
+	border: 1px solid #005584;
+	color: #005584;
+}
+
+#backToList{
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+	width: 50px;
+	height: 50px;
+	background-color: #f2f2f2;
+	border-radius: 50%;
+	border: 1px solid #005584;
+	color: #005584;
+}
+
 #addItem div:after {
 	content: "";
 	display: block;
@@ -155,12 +192,17 @@ div.item_info div#name div#desc{
 	margin-left: 10%;
 	width: 80%;
 	margin-top: 30px;
+	margin-bottom: 20px;
 }
 
 #addItem #form_container input{
 	width: 100%;
 	height: 30px;
 	border-radius: 0;
+}
+
+#addItem #form_container textarea{
+	width: 100%;
 }
 
 #addItem #form_container label{
@@ -178,7 +220,7 @@ div.item_info div#name div#desc{
 }
 
 .order_view{
-	margin-top: 70px;
+	margin-top: 0;
 }
 
 div.order_view{
@@ -267,6 +309,51 @@ button{
 	background-color: #f2f2f2;
 	border: 1px solid #e0e0e0;
 	color: #1F8CB2;
+}
+
+.info_text_container{
+	position: absolute;
+	width: 100%;
+	height: 0;
+	bottom: 0;
+	left: 0;
+	/*overflow: hidden;*/
+	background-color: rgba(0,0,0,0.8);
+
+}
+
+.info_text{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 40px;
+	color: #ffffff;
+}
+
+.info_up{
+	position: absolute;
+	width: 80px;
+	height: 30px;
+	border: 1px solid #eeeeee;
+	background-color: #f0f0f0;
+	border-radius: 0;
+	top: -30px;
+	left: 50%;
+	margin-left: -40px;
+	color: #666;
+}
+
+.info_down{
+	position: absolute;
+	width: 80px;
+	height: 30px;
+	border: 1px solid #eeeeee;
+	background-color: #f0f0f0;
+	border-radius: 0;
+	top: 0px;
+	left: 50%;
+	margin-left: -40px;
+	color: #666;
+	display: none;
 }
 
 

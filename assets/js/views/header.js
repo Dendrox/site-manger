@@ -5,7 +5,9 @@ app.Header = Backbone.View.extend({
 	el     : '#header',
 	button : '<button id="gotoform">Add</button>',
 	events : {
-		'click #gotoform' : 'showForm'
+		'click #gotoform' : 'showForm',
+		'click #my_orders' : 'myOrders',
+		'click #backToList' : 'backToList'
 	},
 	initialize : function(){
 		this.render();
@@ -18,4 +20,12 @@ app.Header = Backbone.View.extend({
 		Backbone.history.navigate('#add',{trigger:true})
 
 	},
+	myOrders : function(e){
+		e.preventDefault();
+		Backbone.history.navigate('orders', {trigger:true})
+	},
+	backToList : function(e){
+		e.preventDefault();
+		Backbone.history.navigate('', {trigger:true});
+	}
 })

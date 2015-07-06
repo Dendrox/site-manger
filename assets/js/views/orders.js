@@ -9,7 +9,7 @@ app.OrdersView = Backbone.View.extend({
 	},
 
 	render : function(){
-		$('#header').append('<button id="gotoform">Add</button>');
+		$('#header').empty().append('<button id="backToList">Back</button>');
 		
 		$('.itemsContainer').empty();
 
@@ -23,10 +23,10 @@ app.OrdersView = Backbone.View.extend({
 	},
 
 	renderBook : function( item ){
-		var bookView = new app.BookView({
+		var orderView = new app.OrderView({
 			model : item
 		});
-		$('#items').append( bookView.render().el )
+		$('#items').append( orderView.render().el )
 		$('.order').css({display:'none'})
 
 	}

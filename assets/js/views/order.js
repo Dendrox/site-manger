@@ -1,16 +1,14 @@
 var app = app || {};
 
-app.BookView = Backbone.View.extend({
+app.OrderView = Backbone.View.extend({
 	tagName   : 'div',
 	className : 'itemsContainer',
-	template  : _.template( $('#itemTemplate').html() ),
+	template  : _.template( $('#orderTemplate').html() ),
 
 	events : {
 		'click .order' : 'orderItem',
 		'click .view'   : 'viewItem',
-		'click .info_up'   : 'infoUp',
-		'click .info_down'   : 'infoDown',
-
+		'click .cancel_order' : 'cancelOrder' 
 	},
 
 	render    : function(){
@@ -44,19 +42,16 @@ app.BookView = Backbone.View.extend({
 		Backbone.history.navigate('item/'+this.model.id, {trigger:true})
 		console.log('viewitem')
 	},
-	infoUp : function(){
-		var self = this;
-		$(this.el).find('.info_text_container').animate({height : '130px'}, function(){
-			$(self.el).find('.info_up').css({display : 'none'})
-			$(self.el).find('.info_down').css({display : 'block'})
-
-		});		
-	},
-	infoDown : function(){
-		var self = this;
-		$(this.el).find('.info_text_container').animate({height : '0'}, function(){
-			$(self.el).find('.info_up').css({display : 'block'})
-			$(self.el).find('.info_down').css({display : 'none'})
-		});	
+	cancelOrder : function(e){
+		e.preventDefault();
+		this.model.set({status : 'Available'});
+		this.model.save(undefined, {
+			url : 'https://api.mongolab.com/api/1/databases/site_manager/collections/items/'+this.model.id+'?apiKey=iVU0IeMR4GTTwMVmXwsIqqjbPooI9St3',
+			success : function(response){
+				alert('order cancelled')
+				Backbone.history.navigate('', {trigger:true})
+			}
+		});
+		
 	}
-});
+})

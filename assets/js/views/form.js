@@ -37,6 +37,15 @@ app.FormView = Backbone.View.extend({
 			$(el).val('');
 		});
 
+		$('#addItem div').children('textarea').each(function(i, el){
+			if( $(el).val() !== '' ){
+
+				formData[el.id] = $(el).val();
+			}
+			// Clear Data from input fields
+			$(el).val('');
+		})
+
 		this.collection.create( formData, {
 			wait : true,
 			success : function(response){
