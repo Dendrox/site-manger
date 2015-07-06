@@ -1,9 +1,11 @@
 var app = app || {};
 
+
+
 app.Book = Backbone.Model.extend({
 	initialize : function(){
 		//this.on('all', function(e) {console.log(this.get(this.itemName ) + ' event:' + e); });
-		console.error(this.url);
+		
 	},
 	defaults : {
 		itemName   : "",
@@ -11,10 +13,14 @@ app.Book = Backbone.Model.extend({
         unitSize   : "",
         unitWeight : "",
         quantity   : undefined,
-        location   : ""
+        location   : "",
+        otherInfo  : "",
+        status     : "Available",
+        uploadedBy : "",
+        orderedBy  : ""
 	},
 	parse : function(response){
-		response.id = response._id;
+		response.id = response._id['$oid'];
 		return response;
 	},
 	destroy : function(options){
@@ -22,4 +28,5 @@ app.Book = Backbone.Model.extend({
 		console.log(options)
 		return Backbone.Model.prototype.destroy.call(this,opts);
 	}
+	
 });

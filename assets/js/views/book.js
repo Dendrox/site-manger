@@ -6,12 +6,12 @@ app.BookView = Backbone.View.extend({
 	template  : _.template( $('#itemTemplate').html() ),
 
 	events : {
-		'click .delete' : 'deleteItem',
+		'click .order' : 'orderItem',
 		'click .view'   : 'viewItem'
 	},
 
 	render    : function(){
-		$('.date').formatDateTime('mm/dd/y g:ii a');
+		console.log(this.model);
 		this.$el.html( this.template(this.model.toJSON() ));
 
 
@@ -19,13 +19,26 @@ app.BookView = Backbone.View.extend({
 
 	},
 
-	deleteItem : function(){
-		this.model.destroy();
+	orderItem : function(e){
+		e.preventDefault();
+		var warning = confirm('Are you sure you want to Order ' + this.model.attributes.quantity 
+			+ ' ' + this.model.attributes.itemName + ' ' + this.model.attributes.itemDesc);
 
-		this.remove();
+		if(warning === true){
+			this.model.set({status : 'Ordered'});
+			this.model.save(undefined,{
+				url : 'https://api.mongolab.com/api/1/databases/site_manager/collections/items/'+this.model.id+'?apiKey=iVU0IeMR4GTTwMVmXwsIqqjbPooI9St3', 
+				success : function(response){
+					console.log(response)
+					Backbone.history.navigate('order/'+response.id, {trigger:true})
+				}
+			});
+			
+		}
+		
 	},
 	viewItem : function(){
-		Backbone.history.navigate('item/:'+this.model.id.$oid, {trigger:true})
+		Backbone.history.navigate('item/'+this.model.id, {trigger:true})
 		console.log('viewitem')
 	}
 });

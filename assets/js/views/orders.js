@@ -1,14 +1,11 @@
 var app = app || {};
 
-app.LibraryView = Backbone.View.extend({
+app.OrdersView = Backbone.View.extend({
 	initialize : function(){
 		this.collection = new app.Library();
 		this.collection.fetch({reset : true});
 		this.listenTo( this.collection, 'reset', this.render );
-		console.error('new lib view')
 		$('#items').empty();
-		$('#login').css({display : 'none'});
-		console.log('logged in as user '+app.login)
 	},
 
 	render : function(){
@@ -18,7 +15,7 @@ app.LibraryView = Backbone.View.extend({
 
 		this.collection.each(function( item ){
 
-			if(item.attributes.status === 'Available'){
+			if(item.attributes.status === 'Ordered'){
 				this.renderBook( item );
 			}
 
@@ -30,7 +27,7 @@ app.LibraryView = Backbone.View.extend({
 			model : item
 		});
 		$('#items').append( bookView.render().el )
-		
+		$('.order').css({display:'none'})
 
 	}
 })

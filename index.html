@@ -18,6 +18,22 @@
       
     </div>
 
+    
+    <script type="text/template" id="loginTemplate">
+       <form action="#" id="user_login">
+        
+        <div id="login_form_container">
+          <label for="username">Site Name</label><br>
+          <input id="username" type="text"><br><br>
+          <label for="password">Email</label><br>
+          <input type="password" id="itemDesc"><br><br>
+          <button id="login_button">Login</button>
+        </div>
+
+
+      </form>
+    </script>
+
     <script type="text/template" id="itemTemplate">
 
       <div class="item_info">
@@ -37,11 +53,29 @@
       <button  class="view">View</button>
     </script>
 
+    <script type="text/template" id="orderTemplate">
+
+      <div class="order_view">
+          <div id="name"><%= itemName %><div id="desc">(<%= itemDesc %>)</div></div>
+        
+          <div id="size"><span class="descriptor">Size:</span> <%= unitSize %></div>
+        
+        
+          <div id="amount"><span class="descriptor">Quantity: </span><%= quantity %></div>
+        
+       
+          <div id="itemLocation"><span class="descriptorLoc">Location: </span><%= location %></div>
+       
+      </div>
+
+      <button  class="cancel_order">Cancel</button>
+    </script>
+
      <script type="text/template" id="itemView">
 
-      <div class="item_info">
-          <div id="name"><%= itemName %></div><br><br>
-          <div id="desc"><%= itemDesc %></div><br><br>
+      <div class="item_view_info">
+          <div id="name"><span class="descriptor">Item Name:<%= itemName %></div><br><br>
+          <div id="desc"><span class="descriptor">Item Description:<%= itemDesc %></div><br><br>
         
           <div id="size"><span class="descriptor">Size:</span> <%= unitSize %></div><br>
         
@@ -50,11 +84,11 @@
         
        
           <div id="itemLocation"><span class="descriptorLoc">Location: </span><%= location %></div><br>
-       
+          <button  class="back">Back</button>
       </div>
 
       <button  class="delete order">ORDER</button>
-      <button  class="back">Back</button>
+      
     </script>
 
     <script type="text/template" id="formTemplate">
@@ -90,12 +124,17 @@
     <script src="assets/js/vendor/jquery.formatDateTime.js"></script>
     <script src="assets/js/vendor/jquery-ui.js"></script>
     <script src="assets/js/models/book.js"></script>
+    <script src="assets/js/collections/users.js"></script>
+    <script src="assets/js/models/user.js"></script>
     <script src="assets/js/collections/library.js"></script>
     <script src="assets/js/views/book.js"></script>
     <script src="assets/js/views/library.js"></script>
     <script src="assets/js/views/form.js"></script>
     <script src="assets/js/views/header.js"></script>
     <script src="assets/js/views/itemView.js"></script>
+    <script src="assets/js/views/myOrder.js"></script>
+    <script src="assets/js/views/orders.js"></script>
+    <script src="assets/js/views/login.js"></script>
     <script src="assets/js/router.js"></script>       
     <script src="assets/js/app.js"></script>    
 

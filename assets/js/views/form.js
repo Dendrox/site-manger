@@ -41,7 +41,7 @@ app.FormView = Backbone.View.extend({
 			wait : true,
 			success : function(response){
 				console.error('model created')
-				console.error(response)
+				console.error(response);
 				Backbone.history.navigate('',{trigger:true});
 			},
 			error : function(err){

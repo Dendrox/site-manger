@@ -2,10 +2,16 @@ var app = app || {};
 
 app.Router = Backbone.Router.extend({
 	routes : {
+		'login'    : 'loginView',
 		'' : 'listView',
 		'add' : 'formView',
-		'item/:id' : 'itemView'
+		'item/:id' : 'itemView',
+		'order/:id' : 'orderView',
+		'orders'    : 'ordersView'
 	},
+	loginView : function(){
+		this.loadView(new app.LoginView());		
+	},	
 	listView : function(){
 		this.loadView(new app.LibraryView());
 	},
@@ -14,12 +20,13 @@ app.Router = Backbone.Router.extend({
 	},
 	itemView : function(id){
 		
-		var items = new app.Library();
-		items.fetch();
-		var model = items.where({itemName : 'unbelievable'});
-
-		console.log(items)
-		//this.loadView(new app.ItemView({model : model}));
+		this.loadView(new app.ItemView({id:id}));
+	},
+	orderView : function(id){
+		this.loadView(new app.OrderView({id:id}))
+	},
+	ordersView : function(){
+		this.loadView(new app.OrdersView())
 	},
 	loadView : function(view) {
 		this.view && this.view.remove();

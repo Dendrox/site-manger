@@ -13,7 +13,7 @@ body {
 	border-bottom: 1px solid #e7e7e7;
 	position: fixed;
 	top: 0;
-	z-index: 1000;
+	z-index: 100;
 }
 
 #items{
@@ -177,7 +177,96 @@ div.item_info div#name div#desc{
 	color: #f2f2f2;
 }
 
+.order_view{
+	margin-top: 70px;
+}
+
+div.order_view{
+	width: 75%;
+	position: absolute;
+	left: 20px;
+	top: 10px;
+}
+
+div.order_view div#name{
+	font-size: 2em;
+	color: #29ABE2;
+	margin-bottom: 10px;
+}
+
+div.order_view div#size, 
+div.order_view div#amount,
+div.order_view div#itemLocation{
+	font-size: 1.2em;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+div.order_view span.descriptor{
+	color: #6FB6C9;
+}
+
+div.order_view span.descriptorLoc{
+	color: #C1272D;
+}
+
+div.order_view div#name div#desc{
+	display: inline;
+	font-size: 0.7em;
+	color: #999999;
+	margin-left: 10px;
+}
+
+.cancel_order{
+	position: absolute;
+	width: 80px;
+	height: 30px;
+	border: 1px solid #eeeeee;
+	background-color: #f0f0f0;
+	border-radius: 0;
+	bottom: 20px;
+	right: 20px;
+	color: #666;
+}
+
 button{
 	cursor: pointer;
 }
+
+.item_view_info{
+	margin: 20px;
+}
+
+#login{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 600px;
+	background-color: #1F8CB2;
+	height: 100%;
+	z-index: 105;
+}
+
+#login_form_container{
+	width: 70%;
+	margin-left: 15%;
+	margin-top: 100px;
+}
+#login_form_container input{
+	width: 100%;
+}
+
+#login_button{
+	position: relative;
+	top:20px;
+	left: 50%;
+	margin-left: -50px;
+	width: 100px;
+	height: 40px;
+	background-color: #f2f2f2;
+	border: 1px solid #e0e0e0;
+	color: #1F8CB2;
+}
+
 
