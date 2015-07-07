@@ -23,14 +23,14 @@ app.Router = Backbone.Router.extend({
 		this.loadView(new app.ItemView({id:id}));
 	},
 	orderView : function(id){
-		this.loadView(new app.OrderView({id:id}))
+		this.loadView(new app.MyOrderView({id:id}))
 	},
 	ordersView : function(){
 		this.loadView(new app.OrdersView())
 	},
 	loadView : function(view) {
 		this.view && this.view.remove();
-        $('#header').empty();
+		
 		setTimeout(function(view){
 			var header = new app.Header();
 			this.view = view;

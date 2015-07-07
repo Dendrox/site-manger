@@ -44,7 +44,8 @@ app.BookView = Backbone.View.extend({
 		Backbone.history.navigate('item/'+this.model.id, {trigger:true})
 		console.log('viewitem')
 	},
-	infoUp : function(){
+	infoUp : function(e){
+		e.preventDefault();
 		var self = this;
 		$(this.el).find('.info_text_container').animate({height : '130px'}, function(){
 			$(self.el).find('.info_up').css({display : 'none'})
@@ -52,7 +53,8 @@ app.BookView = Backbone.View.extend({
 
 		});		
 	},
-	infoDown : function(){
+	infoDown : function(e){
+		e.preventDefault();
 		var self = this;
 		$(this.el).find('.info_text_container').animate({height : '0'}, function(){
 			$(self.el).find('.info_up').css({display : 'block'})

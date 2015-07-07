@@ -7,7 +7,8 @@ app.Header = Backbone.View.extend({
 	events : {
 		'click #gotoform' : 'showForm',
 		'click #my_orders' : 'myOrders',
-		'click #backToList' : 'backToList'
+		'click #backToList' : 'backToList',
+		'click #side_menu' : 'toggleMenu'
 	},
 	initialize : function(){
 		this.render();
@@ -27,5 +28,20 @@ app.Header = Backbone.View.extend({
 	backToList : function(e){
 		e.preventDefault();
 		Backbone.history.navigate('', {trigger:true});
+	},
+	toggleMenu : function(){
+		if(app.menuState === false){
+			$('#menu_div').animate({width : '160px'}, function(){
+				app.menuState = true;
+			})
+			
+		}
+		else{
+			$('#menu_div').animate({width : '0px'}, function(){
+				app.menuState = false;
+			})
+			
+		}
+		
 	}
 })

@@ -9,7 +9,7 @@ app.OrdersView = Backbone.View.extend({
 	},
 
 	render : function(){
-		$('#header').empty().append('<button id="backToList">Back</button>');
+		$('#header').empty().append('<button id="backToList"><i class="fa fa-arrow-left"></i></button>');
 		
 		$('.itemsContainer').empty();
 

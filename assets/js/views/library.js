@@ -3,6 +3,7 @@ var app = app || {};
 app.LibraryView = Backbone.View.extend({
 	initialize : function(){
 		this.collection = new app.Library();
+		var menu = new app.MenuView();
 		this.collection.fetch({reset : true});
 		this.listenTo( this.collection, 'reset', this.render );
 		console.error('new lib view')
@@ -12,7 +13,8 @@ app.LibraryView = Backbone.View.extend({
 	},
 
 	render : function(){
-		$('#header').append('<button id="side_menu">Menu</button><button id="my_orders">Orders</button><button id="gotoform">Add</button>');
+
+		$('#header').empty().append('<button id="side_menu"><i class="fa fa-ellipsis-v"></i></button><button id="my_orders"><i class="fa fa-archive"></i></button><button id="gotoform"><i class="fa fa-plus"></i></button>');
 		
 		$('.itemsContainer').empty();
 

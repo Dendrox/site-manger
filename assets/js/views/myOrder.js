@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.OrderView = Backbone.View.extend({
+app.MyOrderView = Backbone.View.extend({
 	template : _.template($('#orderTemplate').html()),
 
 	events : {
@@ -8,6 +8,7 @@ app.OrderView = Backbone.View.extend({
 	},
 
 	initialize : function(id){
+		console.error('im in');
 		var self = this;
 		this.model = new app.Book();
 		this.model.fetch({
